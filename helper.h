@@ -9,16 +9,18 @@
 #include <cstdlib>
 #include <string>
 void runchcker() {
+	printf("checking for Roblox:\n");
 LPCSTR app_name = "Roblox";
 if (FindWindowA(0, app_name)) {
-	printf("ok\n");
+	printf("Roblox Found\n");
 }else {
-	MessageBox(NULL, L"Not Found", L"Roblox Not Found", MB_OK);
-
+	MessageBox(NULL, L"Not Found", L"Roblox Not Found", MB_OKCANCEL);
+	printf("Roblox Not Found\n");
+	exit(1);
 }
 }
 void oschecker() {
-	printf("checking for OS\n");
+	printf("checking for OS:\n");
 	if (!IsWindows10OrGreater())
 	{
 		printf("Meets Requirements\n");
@@ -29,4 +31,11 @@ void oschecker() {
 		exit(1);
 	}
 
+}
+void hide()
+{
+	HWND Stealth;
+	AllocConsole();
+	Stealth = FindWindowA("ConsoleWindowClass", NULL);
+	ShowWindow(Stealth, 0);
 }
