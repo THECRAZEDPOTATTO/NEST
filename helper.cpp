@@ -5,8 +5,8 @@
 using namespace std;
 int main()
 {
-	oschecker();
+	hide();
 	runchcker();
-	
+	oschecker();	
 }
 
