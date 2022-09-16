@@ -1,11 +1,21 @@
 #pragma once
 #include <Windows.h>
 #include <stdio.h>
-#include <string>
 #include <VersionHelpers.h>
+#include <cstdio>
+#include <tlhelp32.h>
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <string>
 void runchcker() {
-printf("checking for EXE\n");
-	
+LPCSTR app_name = "Roblox";
+if (FindWindowA(0, app_name)) {
+	printf("ok\n");
+}else {
+	MessageBox(NULL, L"Not Found", L"Roblox Not Found", MB_OK);
+
+}
 }
 void oschecker() {
 	printf("checking for OS\n");
@@ -20,8 +30,3 @@ void oschecker() {
 	}
 
 }
-void luachecker() {
-printf("checking for Lua\n");
-
-}
-
