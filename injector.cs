@@ -38,7 +38,7 @@ public class BasicInject
 
     public static int Main()
     {
-        Process targetProcess = Process.GetProcessesByName("roblox")[0];
+        Process targetProcess = Process.GetProcessesByName("RobloxPlayerBeta.exe")[0];
         IntPtr procHandle = OpenProcess(PROCESS_CREATE_THREAD | PROCESS_QUERY_INFORMATION | PROCESS_VM_OPERATION | PROCESS_VM_WRITE | PROCESS_VM_READ, false, targetProcess.Id);
         IntPtr loadLibraryAddr = GetProcAddress(GetModuleHandle("kernel32.dll"), "LoadLibraryA");
         string dllName = "nestinjector.dll";
